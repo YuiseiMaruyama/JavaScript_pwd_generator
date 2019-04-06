@@ -60,7 +60,7 @@
         <!-- フォームの入力項目をグループ化で、Tabキーでグループ間を簡単に移動できる -->
         <fieldset>
             <legend>Options</legend>
-            <p>length: <input type="range"></p>
+            <p>length (<span id="label">8</span>): <input type="range" id="slider" value="8" min="4" max="20"></p>
             <p>
                 <!-- Numbersを含めるかどうか -->
                 Numbers?: <input type="checkbox">
@@ -69,5 +69,17 @@
             </p>
         </fieldset>
     </div>
+    <script>
+        (function() {
+            'use strict';
+
+            var slider = document.getElementById('slider');
+            var label = document.getElementById('label');
+
+            slider.addEventListener('change', function(){
+                label.innerHTML = this.value;
+            });
+        })();
+    </script>
 </body>
 </html>
