@@ -79,7 +79,21 @@
             var result = document.getElementById('result');
 
             function getPassword(){
-                result.value = 'asdfg87sgssg';
+
+                var seed = 'abcdefghijklmnopqrstuvwxyz';
+                var len = slider.value;
+                var pwd = '';
+
+                // for(var i=0;i<len;i++){
+                //     pwd += seed[Math.floor(Math.random() * seed.length)];
+                // }
+
+                //lemを1文字ずつ減らしていき、0になるまで実行
+                while (len--){
+                    pwd += seed[Math.floor(Math.random() * seed.length)];
+                }
+
+                result.value = pwd;
             }
 
             slider.addEventListener('change', function(){
