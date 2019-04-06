@@ -53,7 +53,7 @@
 <body>
     <div class="container">
         <!-- パスワードを表示するエリア作成 -->
-        <p><input type="text"></p>
+        <p><input type="text" id="result"></p>
         <p><div id="btn">Gernerate Password</div></p>
         <!-- <FIELDSET>はフォームの入力項目をグループ化する -->
         <!-- <legend></legend>で入力項目をグループにタイトルをつける -->
@@ -75,10 +75,30 @@
 
             var slider = document.getElementById('slider');
             var label = document.getElementById('label');
+            var btn = document.getElementById('btn');
+            var result = document.getElementById('result');
+
+            function getPassword(){
+                result.value = 'asdfg87sgssg';
+            }
 
             slider.addEventListener('change', function(){
+                // labelの要素を削除して、sliderのvalueに変化させる
                 label.innerHTML = this.value;
             });
+
+            btn.addEventListener('click', function(){
+                getPassword();
+                // result.value = 'asdfg87sgssg';
+            });
+
+            result.addEventListener('click', function(){
+                this.select();
+            });
+
+            //ページが表示されたときにもパスワードを表示しておく
+            getPassword();
+
         })();
     </script>
 </body>
