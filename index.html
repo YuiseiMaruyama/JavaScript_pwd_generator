@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Password Generator</title>
     <style>
-        .body{
+        body{
             background: #e0e0e0;
             font-family: 'Courier New',sans-serif;
             text-align: center;
@@ -14,5 +14,23 @@
     
 </head>
 <body>
+    <div class="container">
+        <!-- パスワードを表示するエリア作成 -->
+        <p><input type="text"></p>
+        <p><div id="btn">Gernerate Password</div></p>
+        <!-- <FIELDSET>はフォームの入力項目をグループ化する -->
+        <!-- <legend></legend>で入力項目をグループにタイトルをつける -->
+        <!-- フォームの入力項目をグループ化で、Tabキーでグループ間を簡単に移動できる -->
+        <fieldset>
+            <legend>Options</legend>
+            <p>length: <input type="range"></p>
+            <p>
+                <!-- Numbersを含めるかどうか -->
+                Numbers?: <input type="checkbox">
+                <!-- Symbolsを含めるかどうか -->
+                Symbols?: <input type="checkbox">
+            </p>
+        </fieldset>
+    </div>
 </body>
 </html>
